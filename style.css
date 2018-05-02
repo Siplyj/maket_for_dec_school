@@ -1,0 +1,185 @@
+#cells {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	padding-left: 0px;
+	margin-bottom: 0px;
+	flex-wrap: wrap;
+	max-width: 1155px;
+}
+
+#cells li {
+	display: block;
+	width: 165px;
+	height: 165px;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-weight: bold;
+}
+
+#cells p {
+	margin: 20px 15px 0px 15px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+#main_cell {
+	width: 330px !important;
+	color: #000000 !important;
+	background-color: #14cac2 !important;
+	font-size: 40px !important;
+}
+
+#main_cell p {
+	line-height: 36px !important;
+	margin: 40px 0px 0px 50px !important;
+}
+
+.not_empty_li {
+	background-color: #0cb1aa;
+}
+
+#middle_line {
+	display: flex;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: #04726d;
+	max-width: 1155px;
+	min-height: 152px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	color: #ffffff;
+	cursor: default;
+}
+
+#middle_line span:nth-child(1) {
+	margin-left: 5%;
+	font-size: 62pt;
+	font-weight: bold;
+	line-height: 1;
+}
+
+#middle_line span:nth-child(2) {
+	margin: 15px 2%;
+	width: 78%;
+	font-size: 12pt;
+	text-transform: uppercase;
+	text-align: justify;
+}
+
+#bottom_line {
+	display: flex;
+	margin: auto;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: #eefaf9;
+	max-width: 1155px;
+	min-height: 298px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	color: #000000;
+	cursor: default;
+}
+
+#send_request_text {
+	width: 200px;
+}
+
+#send_request_title {
+	text-transform: uppercase;
+	font-size: 36pt;
+	line-height: 0.9;
+	font-weight: bold;
+}
+
+#send_request_description {
+	width: 95%;
+	font-size: 12pt;	
+}
+
+#request_form {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	flex-wrap: wrap;
+}
+
+#request_form input, #request_form textarea {
+	margin: 0px 9px;
+	padding: 0px 5px;
+	width: 306px;
+	font-size: 16px;
+	border: 1px solid #0cb1aa;
+	outline: none;
+}
+
+#request_form input {
+	height: 39px;
+}
+
+#request_form textarea {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: 169px;
+	resize: none;
+}
+
+#request_form label {
+	display: block;
+	margin-left: 11px;
+	padding: 7px 0px 3px 0px;
+	font-size: 12pt;
+}
+
+#request_form_second_col button {
+	position: relative;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	height: 39px;
+	top: 5px;
+	left: 172.5px;
+	font: bold 16px/1.2 Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	text-transform: uppercase;
+	background-color: #f7a9ab;
+	border: none;
+	border-radius: 8px;
+	border-bottom: 5px solid #f59799;
+	cursor: pointer;
+}
+
+#request_form_second_col button:active, 
+#request_form_second_col button:focus {
+	outline: none;
+}
+
+#form_message {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,0%);
+	text-align: center;
+}
+
+@media only screen and (max-width: 890px) {
+	#send_request_text {
+		margin-top: 20px;
+		width: 600px;
+		text-align: center;
+	}
+
+	#send_request_description {
+		margin: 16px auto 0px auto;
+	}
+}
+
+@media only screen and (max-width: 690px) {
+	#form_message {
+		padding: 5px 10px;
+		left: 50%;
+		transform: translate(-50%,-175%);
+		background-color: #ffffff;
+	}
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Макет</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+	<div id="top_line">
+		<ul id="cells">
+			<li id="main_cell"><p>Блоки обучения</p></li>
+			<li class="not_empty_li"><p>Арт</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>Спорт</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>Stem</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>Гуманитарный блок</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>It</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>Медиа</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>Perfomance</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>Полиглот</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>Бизнес</p></li>
+			<li></li>
+			<li class="not_empty_li"><p>Социальная ответственность</p></li>
+		</tr>
+	</ul>
+	<div id="middle_line">
+		<span>65%</span>
+		<span>Сегодняшних учеников начальной школы будут работать в профессиях, которых еще не существует. Сейчас главная задача родителя – дать своему ребенку такое образование, которое поможет адаптироваться к вызовам будущего.</span>
+	</div>
+	<div id="bottom_line">
+		<div id="send_request_text">
+			<span id="send_request_title">Подать заявку</span>
+			<p id="send_request_description">Заполните форму, чтобы записаться на консультацию – это первый шаг к зачислению в школу. Количество мест ограничено</p>
+		</div>
+		<form id="request_form">
+			<div id="request_form_first_col">
+				<label>Имя</label>
+				<input type="text" id="quest_name" name="quest_name" autocomplete="off">
+				<label>Телефон</label>
+				<input type="text" id="quest_phone" name="quest_phone" autocomplete="off">
+				<label>E-mail</label>
+				<input type="text" id="quest_email" name="quest_email" autocomplete="off">
+			</div>
+			<div id="request_form_second_col">
+				<label>Сообщение:</label>
+				<textarea id="quest_message" name="quest_message" autocomplete="off"></textarea><br>
+				<button type="submit" value="Отправить">подать заявку</button>
+			</div>
+		</form>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			$("#request_form").submit(function(){
+				if ($("#form_message")) {
+					$("#form_message").remove();
+				}
+
+				var data = $(this).serialize();
+				$.ajax({
+					type: "POST",
+					url: "add.php",
+					dataType: "json",
+					data: data,
+					success: function(result) {
+						$(result).insertAfter($("#quest_message"));
+						if ($(result).css("color") == "rgb(20, 202, 194)") {
+							$("#request_form input, #request_form textarea").val("");
+						}
+					}
+				})
+				return false;
+			});
+		});
+	</script>
+</body>
+</html>
