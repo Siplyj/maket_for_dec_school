@@ -1,0 +1,1 @@
+# maket_for_dec_school
